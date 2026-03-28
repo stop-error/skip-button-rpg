@@ -1,0 +1,114 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+body {
+  background-color: var(--backgroundColor, greenyellow);
+  font-family:'Franklin Gothic Medium', 'sans-serif';
+}
+
+input[type=button] {
+  padding: 10px;
+}
+
+.centerAlign {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 30%;
+}
+
+.monospaced {
+  font-family: 'Courier New', monospace;
+}
+
+#controlsContainer {
+  display: flex;
+  width: 100%;
+}
+
+#controls {
+  flex-shrink: 2;
+  padding: 10px;
+}
+
+#info {
+  flex-shrink: 1;
+  padding: 10px;
+}
+
+#mainContent {
+  height: 100%;
+  width: 100%;
+}
+
+#mainDialog {
+  background-clip: padding-box;
+  background-color: var(--dialogBoxColor, dodgerblue);
+  border-width: 8px;
+  border-style: solid;
+  border-image: url("border.gif");
+  border-image-repeat: repeat;
+  border-image-slice: 10;
+  border-image-width: 16px;
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: x-large;
+  image-rendering: crisp-edges;
+  padding: 8px;
+  text-shadow: 2px 2px 1px black;
+}
+
+#dialogContainer {
+  display: inline-block;
+  position: relative;
+}
+
+#moreTextIcon {
+  position: absolute;
+  left: calc(100% - 36px);
+  visibility: hidden;
+  animation-duration: 1s;
+  animation-name: moreTextIcon;
+  animation-iteration-count: infinite;
+}
+
+.animateScale {
+  animation-duration: 200ms;
+  animation-name: openScale;
+}
+
+@keyframes moreTextIcon {
+  from {
+    top: calc(100% - 32px);
+  }
+
+  to {
+    top: calc(100% - 26px);
+  }
+}
+
+@keyframes openScale {
+  from {
+    height: 16px;
+    width: 16px;
+  }
+
+  to {
+    height: var(--dialogHeight, 100px);
+    width: var(--dialogWidth, 100px);
+  }
+}
+
+@keyframes closeScale {
+  to {
+    height: 16px;
+    width: 16px;
+  }
+
+  from {
+    height: var(--dialogHeight, 100px);
+    width: var(--dialogWidth, 100px);
+  }
+}

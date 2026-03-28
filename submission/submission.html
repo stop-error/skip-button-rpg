@@ -5,6 +5,7 @@
   <title>Joel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="stylesheet" href="stylesheets/custom.css">
   <style type="text/css">
     html,
     body {
@@ -15,6 +16,7 @@
     }
 
     #overlay-container {
+      position: relative;
       width: 640px;
       height: 480px;
     }
@@ -39,6 +41,17 @@
 
 <body>
   <div id="overlay-container">
+    
+    <div id="ui-container">
+      <div id=dialog-container>
+        <div id="dialog-box" class="animateScale"></div>
+      </div> 
+      <img src="images/encounter-backround.png" class="encounter-backround">
+      
+    </div>
+    
+
+    
     <!-- We've added a sample button. Feel free to remove it: -->
     <button id="skip">
       Skip Ad...
@@ -46,7 +59,23 @@
   </div>
 
   <script type="text/javascript">
+    var firstRun = true
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+  <script src="libraries/RPGDialogBox/typewriter.js"></script>
+  <script src="libraries/RPGDialogBox/app.js"></script>
+
+  <script src="scripts/intro.js"></script>
+  <script src="scripts/game.js"></script>
+  <script type="text/javascript">
+    
+
     (function(window, document){
+      
+
+      const { animate } = anime;
+
       // This is how you tell the parent window that the ad was successfully skipped.
       function adSuccess() {
         window.top.postMessage({ type: 'success' }, '*');
@@ -72,10 +101,18 @@
         }
       });
 
-      // Your ad overlay code goes here, we've added a simple example below:
+      // Your ad overlay code goes here, we've added a simple example below: 
+
       skipButton.addEventListener('click', () => {
-        skipButton.style.display = 'none';
-        adSuccess();
+        window.top.postMessage({ type: 'pause' }, '*')
+
+        intro()
+        setTimeout(game, 3000)
+
+
+
+        //skipButton.style.display = 'none';
+        //adSuccess();
       });
 
     })(window, document);
