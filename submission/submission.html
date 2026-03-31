@@ -17,8 +17,8 @@
 
     #overlay-container {
       position: relative;
-      width: 640px;
-      height: 480px;
+      width: 960px;
+      height: 540px;
     }
 
     /* Your style here... (feel free to remove this example styling) */
@@ -48,6 +48,23 @@
       </div> 
       <img src="images/encounter-backround.png" class="encounter-backround">
       
+      <div id="attackBox"
+        style="background-color: dodgerblue; height: 120px; position:absolute; bottom: 0; left: 0; right: 0; border-style: solid; border-image: url('./images/border.gif'); border-image-repeat: repeat; border-image-slice: 10; border-image-width: 16px; display:none;">
+
+        <div id="attackDialogueBox"
+          style="position:absolute; top: 0; bottom: 0; left:0; right: 0; background-color:rgb(202, 201, 201); padding: 12px; display: none; cursor: pointer">
+        </div>
+
+        <div id="attacksBox" style="display:inline-block; margin-top: 43px; width: 100%;">
+          <button style="margin-left: 200px; margin-right: 2em; color: white; background:none; border:none; cursor: pointer; font-family: 'Trebuchet MS', sans-serif; font-size: 30px; text-shadow: 2px 2px 1px black">FIGHT</button>
+          <button style="margin-right: 2em; color: white; background:none; border:none; cursor: pointer; font-family: 'Trebuchet MS', sans-serif; font-size: 30px; text-shadow: 2px 2px 1px black">ITEM</button>
+          <button style="margin-right: 2em; color: white; background:none; border:none; cursor: pointer; font-family: 'Trebuchet MS', sans-serif; font-size: 30px; text-shadow: 2px 2px 1px black">MAGIC</button>
+          <button onclick="player_run()" style="margin-right: 2em; color: white; background:none; border:none; cursor: pointer; font-family: 'Trebuchet MS', sans-serif; font-size: 30px; text-shadow: 2px 2px 1px black">RUN</button>
+        </div>
+
+      </div>
+
+
     </div>
     
 
@@ -58,16 +75,17 @@
     </button>
   </div>
 
-  <script type="text/javascript">
-    var firstRun = true
-  </script>
+ 
   <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
   <script src="libraries/RPGDialogBox/typewriter.js"></script>
   <script src="libraries/RPGDialogBox/app.js"></script>
 
   <script src="scripts/intro.js"></script>
-  <script src="scripts/game.js"></script>
+  <script src="scripts/gameboot.js"></script>
+  <script src="scripts/gameplay.js"></script>
+  <script src="scripts/attacks.js"></script>
+  <script src="scripts/animations.js"></script>
   <script type="text/javascript">
     
 
@@ -106,8 +124,15 @@
       skipButton.addEventListener('click', () => {
         window.top.postMessage({ type: 'pause' }, '*')
 
-        intro()
-        setTimeout(game, 3000)
+        checkIfFirstRun()
+        .then(bounceButton)
+        .then(() => timeout(500))
+        .then(encounterTransition)
+        .then(() => timeout(1000))
+        .then(startGame)
+        .then(() => timeout(3000))
+        .then(gameLoopEntry)
+        //.catch(handleClickAfterFisrtRun) 
 
 
 

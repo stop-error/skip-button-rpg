@@ -1,17 +1,21 @@
+var introHasRun = false
+var sfxEncounterStart = new Howl({ src: 'audio/encounter_start.ogg' })
+var sfxEncounterTransition = new Howl({ src: 'audio/encounter-transition.ogg' })
+
 function checkIfFirstRun() {
 
-    if (firstRun === true) {
-        firstRun = false
+    if (introHasRun === false) {
+        introHasRun = true
         return Promise.resolve()
     } else {
-        return Promise.reject(new Error("firstRun false!"))
+        return Promise.reject(new Error("introHasRun false!"))
     }
 }
 
 function bounceButton() {
 
-    var encounter_start = new Howl({ src: 'audio/encounter-start.ogg' })
-    encounter_start.play()
+    
+    sfxEncounterStart.play()
 
     return anime.animate(
         '#skip',
@@ -19,24 +23,40 @@ function bounceButton() {
             y: [
                 { to: '-10px', ease: 'outExpo', duration: 200 },
                 { to: '10px', ease: 'outBounce', duration: 200 },
+                
             ],
-    })
+    },
+    
+)
 }
 
-function timeout2000ms() {
-
-    var promise = new Promise(function(resolve) {
-
+function timeout(ms) {
+    return new Promise((resolve) => {
         setTimeout(() => {
-            console.log("timeout 2000ms");
-        }, 2000);
-
-        resolve()
+            console.log("timeout");
+            resolve()
+        }, ms);
     })
 }
 
 function encounterTransition() {
+
+    
+    sfxEncounterTransition.play()
      
+    anime.animate(
+        '#skip',
+        {
+            x: [
+                { to: '-445px', ease: 'outExpo', duration: 1700 }
+            ],
+            y: [
+                { to: '-150px', ease: 'outExpo', duration: 1700 },
+            ],
+            scale: 1.5,
+        }
+    )
+
     return anime.animate(
         '.encounter-backround',
         {
@@ -45,31 +65,16 @@ function encounterTransition() {
             loop: 2,
             alternate: true,
         }
+        
     )
 }
 
-function moveButton() {
-
-    return anime.animate(
-        '#skip',
-        {
-            x: [
-                { to: '-270px', ease: 'outExpo', duration: 1700 }
-            ],
-            y: [
-                { to: '-100px', ease: 'outExpo', duration: 1700 },
-            ],
-            scale: 1.5,
-        }
-)
+function handleClickAfterFisrtRun () {
+    console.log("Can't run checkIfFirstRun again!")
+    var buttonCry = new Howl({ src: 'audio/button-cry.mp3' })
+        buttonCry.play()
 }
 
-function intro() {
-    checkIfFirstRun()
-    .then(bounceButton)
-    .then(timeout2000ms)
-    .then(encounterTransition)
-    .then(moveButton)
-    .catch(() => console.log("Can't run checkIfFirstRun again!"))
-}
+
+
 
