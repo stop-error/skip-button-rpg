@@ -1,24 +1,30 @@
-function player_run() {
+function playerRun() {
 
-    function run_msg_1 () {
+    // turnState.setCurrentTurn = "cpu"
+    uiState.setUiVisible = "hidden"
+
+    function runMsg1 () {
         return new Promise((resolve) => {
             typewriter.clear
-            typewriter.start("PLAYER tried to RUN AWAY!")
+            typewriter.start("PLAYER tried to RUN!")
             resolve()
-    })}
+        })
+    }
 
-    function run_msg_2 () {
+    function runMsg2 () {
         return new Promise((resolve) => {
-            typewriter.start("But you can't RUN AWAY from capitalism!")
+            typewriter.start("But you can't RUN from capitalism!")
             resolve()
-    })}
+        })
+    }
 
-    run_msg_1()
+    runMsg1()
     .then(() => timeout(2500))
-    .then(run_msg_2)
+    .then(runMsg2)
     .then(() => timeout(2500))
-    .then(gameLoopEntry)
+    .then(cpuTurn)
 
 }
+
+
     
- 

@@ -1,14 +1,15 @@
-var introHasRun = false
-var sfxEncounterStart = new Howl({ src: 'audio/encounter_start.ogg' })
-var sfxEncounterTransition = new Howl({ src: 'audio/encounter-transition.ogg' })
+var firstRun = true
+var sfxEncounterStart = new Howl({ src: 'audio/encounter-start.ogg', volume: 0.5 })
+var sfxEncounterTransition = new Howl({ src: 'audio/encounter-transition.ogg', volume: 0.5})
 
 function checkIfFirstRun() {
 
-    if (introHasRun === false) {
-        introHasRun = true
+    if (firstRun === true) {
+        firstRun = false
         return Promise.resolve()
     } else {
-        return Promise.reject(new Error("introHasRun false!"))
+        handleClickAfterFisrtRun()
+        return Promise.reject(new Error("Can't run intro more than once!"))
     }
 }
 
@@ -70,8 +71,7 @@ function encounterTransition() {
 }
 
 function handleClickAfterFisrtRun () {
-    console.log("Can't run checkIfFirstRun again!")
-    var buttonCry = new Howl({ src: 'audio/button-cry.mp3' })
+    var buttonCry = new Howl({ src: 'audio/button-cry.mp3'})
         buttonCry.play()
 }
 
