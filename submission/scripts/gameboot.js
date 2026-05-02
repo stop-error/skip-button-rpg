@@ -1,6 +1,6 @@
 var dialogBox = document.getElementById("dialog-box"); 
 const typewriter = new Typewriter(dialogBox);
-var BgmEncounter = new Howl({ src: 'audio/battle-start.ogg', loop: true, volume: 0.5})
+var BgmEncounter = new Howl({ src: 'audio/battle-start.ogg', loop: true, volume: 0.3})
 
 
 
@@ -17,6 +17,5 @@ function startGame() {
         resolve()
     })
 }
-
 
 

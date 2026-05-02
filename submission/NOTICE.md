@@ -13,17 +13,22 @@ Additional samples by Ove Melaa (Omsofware@hotmail.com) -2013 Ove Melaa https://
 
 
 
-<!-- "Ove Melaa - General Snus Loop A" written and produced by Ove Melaa (Omsofware@hotmail.com) https://opengameart.org/content/oves-essential-game-audio-pack-collection-160-files-updated licensed under Creative Commons Attribution 4.0 International: https://creativecommons.org/licenses/by/4.0/ -->
-
-
-
-
 "53 Retro SFX with Source" © 2019 Nooskewl https://opengameart.org/content/53-retro-sfx-with-source licensed under Creative Commons Attribution 4.0 International: https://creativecommons.org/licenses/by/4.0/
 
 
 
 
 "Generic 8-bit JRPG Soundtrack" by AVGVSTA https://opengameart.org/content/generic-8-bit-jrpg-soundtrack licensed under Creative Commons Attribution 4.0 International: https://creativecommons.org/licenses/by/4.0/
+
+
+
+
+"8-bit Danger!! Strong Boss" by HydroGene https://opengameart.org/content/8-bit-danger-strong-boss licensed under Public Domain https://creativecommons.org/publicdomain/zero/1.0/
+
+
+
+
+"8-Bit Victory Loop" by Wolfgang_ https://opengameart.org/content/8-bit-victory-loop licensed under Public Domain https://creativecommons.org/publicdomain/zero/1.0/
 
 
 
@@ -145,6 +150,71 @@ RPGUI (RPG gui for web games) is distributed with the zlib-license:
 
 
 
+bowser-js
+https://github.com/bowser-js/
+
+Copyright 2015, Dustin Diaz (the "Original Author")
+All rights reserved.
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+Distributions of all or part of the Software intended to be used
+by the recipients as they would use the unmodified Software,
+containing modifications that substantially alter, remove, or
+disable functionality of the Software, outside of the documented
+configuration mechanisms provided by the Software, shall be
+modified such that the Original Author's bug reporting email
+addresses and urls are either replaced with the contact information
+of the parties responsible for the changes, or removed entirely.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+
+Except where noted, this license applies to any and all software
+programs and associated documentation files created by the
+Original Author, when distributed with the Software.
+
+
+
+
+countUp.js
+https://github.com/inorganik/CountUp.js
+
+The MIT License (MIT)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+
 Turn-based-RPG
 https://github.com/DeanD94/Turn-based-RPG
 No license provided. 
+
+
+
+
+

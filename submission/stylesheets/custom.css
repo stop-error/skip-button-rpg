@@ -5,8 +5,20 @@
 
 #shades {
     text-align: center;
-    opacity: 15;
+    opacity: 0.30;
+    position: absolute;
+    top: 0;
+    right: 0;
     display: none
+}
+
+#darkpattern-shade {
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline
 }
 
 #dialog-box {
@@ -45,7 +57,7 @@
     border: none;
     /* margin-right: 2em;  */
     font-family: 'Trebuchet MS', sans-serif; 
-    font-size: x-large; 
+    font-size: 17pt; 
     text-shadow: 2px 2px 1px black;
 }
 
@@ -87,10 +99,11 @@
 
 .sub-menu-button-container {
     width: 305px;
+    height: 20px;
     justify-items: center;
-    padding-bottom: 140px;
-    row-gap: 15px;
-    margin-top: 23px;
+    padding-bottom: 180px;
+    row-gap: 45px;
+    margin-top: 42px;
 }
 
 
@@ -114,4 +127,67 @@
     padding-bottom: 40px;
     margin-left: 25px;
     margin-top: 30px;
+}
+
+#macrowave-charge {
+    text-align: center;
+    position: absolute;
+    margin-left: 265px;
+    width: 384px;
+    height: 384px;
+    opacity: 0;
+    bottom: 0;
+}
+
+#macrowave-release {
+    text-align: center;
+    position: absolute;
+    margin-left: 265px;
+    width: 384px;
+    height: 384px;
+    opacity: 0;
+    bottom: 0;
+}
+
+#sword-slash{
+    text-align: center;
+    position: absolute;
+    margin-left: 265px;
+    width: 384px;
+    height: 384px;
+    display: none;
+    margin-top: 150px;
+    
+}
+
+.spam{
+    text-align: center;
+    position: absolute;
+    /* margin-left: 265px; */
+    width: 400px;
+    height: 184px;
+    display: none;
+    
+}
+
+#spam-gateway{
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+#spam-ipod{
+    margin-top: 20px;
+}
+
+#spam-netflix{
+    margin-top: 280px;
+    margin-left: 100px;
+}
+
+#spam-contest{
+    margin-top: 150px;
+}
+
+#spam-youtube{
+    bottom:0;
 }

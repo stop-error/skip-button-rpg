@@ -1,6 +1,6 @@
 var firstRun = true
-var sfxEncounterStart = new Howl({ src: 'audio/encounter-start.ogg', volume: 0.5 })
-var sfxEncounterTransition = new Howl({ src: 'audio/encounter-transition.ogg', volume: 0.5})
+var sfxEncounterStart = new Howl({ src: 'audio/encounter-start.ogg', volume: 0.3 })
+var sfxEncounterTransition = new Howl({ src: 'audio/encounter-transition.ogg', volume: 0.3})
 
 function checkIfFirstRun() {
 
@@ -42,6 +42,7 @@ function timeout(ms) {
 
 function encounterTransition() {
 
+    var video = window.parent.document.getElementById("video")
     
     sfxEncounterTransition.play()
      
@@ -57,6 +58,14 @@ function encounterTransition() {
             scale: 1.5,
         }
     )
+    anime.animate(
+        video,
+        {
+            opacity: 0,
+            duration: 3000,
+        }
+        
+    )
 
     return anime.animate(
         '.encounter-backround',
@@ -65,10 +74,23 @@ function encounterTransition() {
             duration: 400,
             loop: 2,
             alternate: true,
-        }
-        
+        },
     )
 }
+
+// function fadeVideo() {
+
+//     var video = document.getElementById("parent.video")
+
+//     return anime.animate(
+//         video,
+//         {
+//             opacity: 0,
+//             duration: 1000,
+//         }
+        
+//     )
+// }
 
 function handleClickAfterFisrtRun () {
     var buttonCry = new Howl({ src: 'audio/button-cry.mp3'})

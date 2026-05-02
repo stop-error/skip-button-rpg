@@ -47,43 +47,54 @@
         <div id="dialog-box" class="animateScale"></div>
       </div> 
 
-      <img src="images/shades.png" id="shades">
-      <img src="images/encounter-backround.png" class="encounter-backround">
+      <!-- Oops! I did it again, I ran out of time, my code is a mess, oh baby baby -->
+
+      
+      <img src="images/slash_vfx_4.gif" id="sword-slash">
+      <img src="images/spark_vfx_2_reverse.gif" id="macrowave-charge">
+      <img src="images/spark_vfx_1.gif" id="macrowave-release">
+      <img src="images/spam-ipod.gif" class="spam" id="spam-ipod">
+      <img src="images/spam-gateway.png" class="spam" id="spam-gateway">
+      <img src="images/spam-contest.jpeg" class="spam" id="spam-contest">
+      <img src="images/spam-netflix.png" class="spam" id="spam-netflix">
+      <img src="images/spam-youtube.jpeg" class="spam" id="spam-youtube">
+      <img src="images/encounter-backround4.png" class="encounter-backround" id="backround">
       
 
       <div class="menu-box hp-menu-box" id="player-hp-menu">
         <div class="menu-button-container sub-menu-button-container" id="player-hp-button-container">
-            <p1 class="ui-text" id="player-hp">Player: 50 HP</p1>
+            <p1 class="ui-text">PLAYER HP:</p1>
+            <p1 class="ui-text" id="player-hp">50</p1>
           </div>
         </div>
 
       
       <div class="menu-box sub-menu-box" id="fight-menu">
         <div class="menu-button-container sub-menu-button-container" style="margin-top: 42px" id="fight-button-container">
-            <button class="action-button">SWORD</button>
-            <button class="action-button">PARRY</button>
-            <button class="action-button">SPLASH</button>
-            <button class="action-button" onclick="//player_run()">MACROWAVE</button>
+            <button class="action-button" onclick="playerAtkSword()">SWORD</button> <!-- player code done! -->
+            <!-- <button class="action-button">PARRY</button>  -->
+            <button class="action-button" onclick="playerAtkSplash()">SPLASH</button> <!-- player code done! -->
+            <button class="action-button" onclick="playerAtkMacrowave()">MACROWAVE</button> <!-- player code done! -->
           </div>
         </div>
 
 
         <div class="menu-box sub-menu-box" id="magic-menu">
         <div class="menu-button-container sub-menu-button-container" style="margin-top: 42px" id="magic-button-container">
-            <button class="action-button">HEAL</button>
-            <button class="action-button">ADBLOCK</button>
-            <button class="action-button">UPDOG</button>
-            <button class="action-button" onclick="//player_run()">BANISH</button>
+            <button class="action-button" id="heal-button" onclick="playerMagiHeal()">HEAL</button> <!-- player code done! -->
+            <button class="action-button" onclick="playerMagiAdblock()">ADBLOCK</button> <!-- player code done! -->
+            <button class="action-button" id="updog-button" onclick="playerMagiUpdog()">UPDOG</button> <!-- player code done! -->
+            <!-- <button class="action-button">BANISH</button> -->
           </div>
         </div>
 
 
         <div class="menu-box sub-menu-box" id="act-menu">
         <div class="menu-button-container sub-menu-button-container" style="margin-top: 42px" id="act-button-container">
-            <button class="action-button" onclick="playerActHug()">HUG</button>
-            <button class="action-button">AURA FARM</button>
-            <button class="action-button">GOSSIP</button>
-            <button class="action-button">DANCE</button>
+            <button class="action-button" onclick="playerActHug()">HUG</button> <!-- player code done! -->
+            <button class="action-button" id="aurafarm-button" onclick="playerActAurafarm()">AURA FARM</button> <!-- player code done! -->
+            <button class="action-button" onclick="playerActGossip()">GOSSIP</button> <!-- player code done! -->
+            <!-- <button class="action-button">DANCE</button> -->
           </div>
         </div>
 
@@ -93,7 +104,7 @@
           <button class="action-button" style="margin-left: 200px" onclick="openSubMenu('fight-menu', 'fight-button-container')">FIGHT</button>
           <button class="action-button" onclick="openSubMenu('magic-menu', 'magic-button-container')">MAGIC</button>
           <button class="action-button" onclick="openSubMenu('act-menu', 'act-button-container')">ACT</button>
-          <button class="action-button" onclick="playerRun()">RUN</button>
+          <button class="action-button" onclick="playerRun()">RUN</button> <!-- player code done! -->
         </div>
       </div>
 
@@ -105,17 +116,20 @@
 
     </div>
     
-
+    <img src="images/shades.png" style="pointer-events: none" id="darkpattern-shade">
     
     <!-- We've added a sample button. Feel free to remove it: -->
     <button id="skip">
       Skip Ad...
     </button>
+    <img src="images/shades.png" style="pointer-events: none" id="shades">
   </div>
 
  
   <script src="libraries/howler/howler.min.js"></script>
   <script src="libraries/anime/anime.umd.min.js"></script>
+  <script src="libraries/bowser/es5.js"></script>
+  <script src="libraries/countUp/countUp.umd.js"></script>
   <script src="libraries/RPGDialogBox/typewriter.js"></script>
   <script src="libraries/RPGDialogBox/app.js"></script>
 
@@ -123,14 +137,15 @@
   <script src="scripts/gameboot.js"></script>
   <script src="scripts/gameplay.js"></script>
   <script src="scripts/attacks.js"></script>
-  <script src="scripts/acts.js"></script>
   <script src="scripts/animations.js"></script>
+  <script src="scripts/cpu.js"></script>
+  <script src="scripts/acts.js"></script>
+  <script src="scripts/magic.js"></script>
   <script type="text/javascript">
     
 
     (function(window, document){
       
-
       const { animate } = anime;
 
       // This is how you tell the parent window that the ad was successfully skipped.
