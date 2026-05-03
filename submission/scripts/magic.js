@@ -1,5 +1,6 @@
 async function playerMagiUpdog() {
 
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"    
 
     typewriter.clear
@@ -22,6 +23,7 @@ async function playerMagiUpdog() {
 
 async function playerMagiAdblock() {
 
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
 
     typewriter.clear
@@ -50,6 +52,9 @@ async function playerMagiAdblock() {
 
 async function playerMagiHeal() {
 
+    var healFx = new Howl({ src: 'audio/heal.mp3', volume: 0.6})
+
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
 
     typewriter.clear
@@ -60,6 +65,7 @@ async function playerMagiHeal() {
     var currentHp = playerHp.hp
     var newHp = currentHp + 15
     playerHp.hp = newHp
+    healFx.play()
     var healButton = document.getElementById("heal-button")
     healButton.style.display = "none"
     //TODO: heal sound effect!

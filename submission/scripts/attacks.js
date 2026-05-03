@@ -1,3 +1,5 @@
+var subMenuSelectFx = new Howl({ src: 'audio/sub-menu.ogg', volume: 0.7})
+
 async function playerRun() {
 
     uiState.setUiVisible = "hidden"
@@ -17,7 +19,12 @@ async function playerRun() {
 }
 
 async function playerAtkSword() {
+
+    var swordFx = new Howl({ src: 'audio/sword-fx.ogg', volume: 0.6})
+
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
+    
 
     const confused = await playerConfusedCheck() 
         if (confused) {
@@ -40,6 +47,7 @@ async function playerAtkSword() {
 
     var swordSlash = document.getElementById("sword-slash")
     swordSlash.style.display = "block"
+    swordFx.play()
     swordSlash.src = "images/slash_vfx_4.gif"+"?a="+Math.random();
 
     await timeout(1500)
@@ -64,8 +72,9 @@ async function playerAtkSword() {
 
 async function playerAtkSplash() {
     
-
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
+    
 
     const confused = await playerConfusedCheck() 
         if (confused) {
@@ -89,7 +98,12 @@ async function playerAtkSplash() {
 
 async function playerAtkMacrowave() {
 
+    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.0})
+
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
+    
+
 
     const confused = await playerConfusedCheck() 
         if (confused) {
@@ -103,6 +117,7 @@ async function playerAtkMacrowave() {
         await timeout(2500)
 
         await animateMacrowaveChargingShow()
+        macrowaveChargeFx.play()
 
         await timeout(2500)
 
@@ -124,6 +139,8 @@ async function playerAtkMacrowave() {
 
 async function playerAtkMacrowave_Phase1() {
 
+    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.0})
+
     uiState.setUiVisible = "hidden"
 
 
@@ -135,6 +152,7 @@ async function playerAtkMacrowave_Phase1() {
     await timeout(2500)
 
     await animateMacrowaveChargingShow()
+    macrowaveChargeFx.play()
 
     await timeout(2500)
 
@@ -148,6 +166,8 @@ async function playerAtkMacrowave_Phase1() {
 
 
 async function playerAtkMacrowaveRelease() {
+
+    var macrowaveReleaseFx = new Howl({ src: 'audio/release.ogg', volume: 0.8})
 
     uiState.setUiVisible = "hidden"
 
@@ -165,6 +185,7 @@ async function playerAtkMacrowaveRelease() {
     
     playerState.macrowaveCharging = 0
 
+    macrowaveReleaseFx.play()
     await animateMacrowaveReleaseShow()
 
     await timeout(2500)
@@ -196,6 +217,8 @@ async function playerAtkMacrowaveRelease() {
 
 async function cpuAtkTackle() {
 
+    var tackleFx = new Howl({ src: 'audio/tackle.ogg', volume: 0.6})
+
     const confused = await cpuConfusedCheck() 
         if (confused) {
             playerIdle()
@@ -207,6 +230,7 @@ async function cpuAtkTackle() {
 
     await timeout(2500)
 
+    tackleFx.play()
     await animateButtonTackleStart()
     await animateButtonTackleEnd()
     animateButtonIdle()
@@ -272,6 +296,9 @@ async function cpuAtkSpam() {
             playerState.badAccuracyLevel = playerState.badAccuracyLevel + 1
             break
     }
+    
+    var spamFx = new Howl({ src: 'audio/you-won.mp3', volume: 0.8})
+    spamFx.play()
 
     await timeout(1500)
 
@@ -286,6 +313,8 @@ async function cpuAtkSpam() {
 
 async function cpuAtkDarkpattern() {
 
+    var darkFx = new Howl({ src: 'audio/dark.ogg', volume: 0.5})
+
     const confused = await cpuConfusedCheck() 
         if (confused) {
             playerIdle()
@@ -297,9 +326,11 @@ async function cpuAtkDarkpattern() {
 
     await timeout(2500)
 
+    darkFx.play()
     await animateDarkpatternShow()
     await timeout(2500)
     await animateDarkpatternHide()
+    darkFx.pause()
 
     if (playerState.confused === true) {
         typewriter.clear

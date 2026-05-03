@@ -1,5 +1,6 @@
 async function playerActHug() {
 
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"  
     
     typewriter.clear
@@ -38,6 +39,7 @@ async function playerActHug() {
 
 async function playerActAurafarm() {
 
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
     
     typewriter.clear
@@ -61,6 +63,7 @@ async function playerActAurafarm() {
 
 async function playerActGossip() {
 
+    subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"    
 
     typewriter.clear

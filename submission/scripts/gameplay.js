@@ -5,21 +5,42 @@ class PlayerHp {
         this._numAnim.start()
     }
     set hp(hp) {
+        var damageFx = new Howl({ src: 'audio/damage.mp3', volume: 0.6})
         switch (true) {
             case (hp > 30):
+                var oldHp = this._hp
                 this._hp = 30
                 this._numAnim.update(30)
                 this._numAnim.start()
+
+                if (this.hp < oldHp){
+                    animatePlayerHpDamageFlash()
+                    damageFx.play()
+
+                }
+
                 break
             case (hp < 0):
+                var oldHp = this._hp
                 this._hp = 0
                 this._numAnim.update(0)
                 this._numAnim.start()
+
+                if (this.hp < oldHp){
+                    animatePlayerHpDamageFlash()
+                    damageFx.play()
+                }
                 break
             default:
+                var oldHp = this._hp
                 this._hp = hp;
                 this._numAnim.update(hp)
                 this._numAnim.start()
+
+                if (this.hp < oldHp){
+                    animatePlayerHpDamageFlash()
+                    damageFx.play()
+                }
         }
     }
 
@@ -119,6 +140,8 @@ const subMenuBoxArray = ["fight-menu", "magic-menu", "act-menu"]
 const buttonContainerArray = ["main-menu-button-container", "fight-button-container", "magic-button-container", "act-button-container"]
 const subButtonContainerArray = ["fight-button-container", "magic-button-container", "act-button-container"]
 
+var menuSelectFx = new Howl({ src: 'audio/menu.ogg', volume: 0.9})
+
 
 var uiState = new UiState("hidden")
 var playerHp = new PlayerHp(30)
@@ -128,10 +151,15 @@ function playerIdle() {
 
      if (cpuState.hp <= 0) {
         playerWin()
-        console.log("player won!")
+        return
+        
+    } else if (playerHp.hp <= 0) {
+        cpuWin()
         return
         
     }
+
+    
     
     switch (true) {
         case (playerState.macrowaveCharging === 1):
@@ -154,7 +182,11 @@ function cpuTurn() {
         console.log("player won!")
         return
         
-    } 
+    } else if (playerHp.hp <= 0) {
+        cpuWin()
+        return
+        
+    }
 
     var select = Math.floor(Math.random() * 10)
 
@@ -179,10 +211,34 @@ function cpuTurn() {
 }
 
 
-    
+
+async function cpuWin() {
+    BgmEncounter.stop()
+    var bgmLose = new Howl({ src: 'audio/win.ogg', loop: true, volume: 0.7})
+    bgmLose.play()
+
+    typewriter.clear()
+    typewriter.start("PLAYER was defeated by SKIP BUTTON LvL. 5!")
+
+    await timeout(3500)
+
+    typewriter.clear()
+    typewriter.start("SKIP BUTTON LvL. 5: \"Looks like you should have bought premium!\"")
+
+    await timeout(3500)
+
+    typewriter.clear()
+    typewriter.start("PLAYER lost 67 coins!")
+
+    await timeout(3500)
+
+    window.top.postMessage({ type: 'fail' }, '*')
+
+}
+
 
 async function playerWin() {
-    BgmEncounter.pause()
+    BgmEncounter.stop()
     var bgmWin = new Howl({ src: 'audio/win.ogg', loop: true, volume: 0.7})
     bgmWin.play()
 
@@ -192,7 +248,7 @@ async function playerWin() {
     await animateButtonWin()
 
     typewriter.clear()
-    typewriter.start("PLAYER gained 67 exp!")
+    typewriter.start("PLAYER gained 69 exp!")
     await timeout(4500)
 
     window.top.postMessage({ type: 'success' }, '*')
@@ -235,6 +291,7 @@ function openSubMenu(subMenuId, buttonContainerId) {
         return
     }
 
+    menuSelectFx.play()
     subMenuElement = document.getElementById(subMenuId)
     subMenuElement.style.display = "grid"
 

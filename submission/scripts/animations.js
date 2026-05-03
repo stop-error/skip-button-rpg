@@ -73,6 +73,9 @@ function animateMacrowaveReleaseHide() {
 }
 
 function animateButtonDamageFlash() {
+
+    var damageFx = new Howl({ src: 'audio/damage.mp3', volume: 0.6})
+    damageFx.play()
     return anime.animate(
         '#skip',
         {
@@ -83,6 +86,21 @@ function animateButtonDamageFlash() {
         },
     )
 }
+
+
+function animatePlayerHpDamageFlash() {
+
+    return anime.animate(
+        '#player-hp-button-container',
+        {
+            opacity: [1, 0, 1],
+            duration: 50,
+            easing: 'none',
+            loop: 20,
+        },
+    )
+}
+
 
 function animateButtonTackleStart() {
     anime.remove('#skip')
@@ -143,7 +161,7 @@ function animateDarkpatternHide() {
         shade,
         {
             opacity: 0,
-            duration: 1000,
+            duration: 1200,
         },
     )
 
