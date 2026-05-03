@@ -1,3 +1,5 @@
+var healFx = new Howl({ src: 'audio/heal.mp3', volume: 0.6})
+
 async function playerMagiUpdog() {
 
     subMenuSelectFx.play()
@@ -51,8 +53,6 @@ async function playerMagiAdblock() {
 }
 
 async function playerMagiHeal() {
-
-    var healFx = new Howl({ src: 'audio/heal.mp3', volume: 0.6})
 
     subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"

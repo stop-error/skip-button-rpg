@@ -1,4 +1,10 @@
 var subMenuSelectFx = new Howl({ src: 'audio/sub-menu.ogg', volume: 0.7})
+var swordFx = new Howl({ src: 'audio/sword-fx.ogg', volume: 0.6})
+var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.4})
+var macrowaveReleaseFx = new Howl({ src: 'audio/release.ogg', volume: 1.4})
+var tackleFx = new Howl({ src: 'audio/tackle.ogg', volume: 0.6})
+var spamFx = new Howl({ src: 'audio/you-won.mp3', volume: 0.8})
+var darkFx = new Howl({ src: 'audio/dark.ogg', volume: 0.5})
 
 async function playerRun() {
 
@@ -19,8 +25,6 @@ async function playerRun() {
 }
 
 async function playerAtkSword() {
-
-    var swordFx = new Howl({ src: 'audio/sword-fx.ogg', volume: 0.6})
 
     subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
@@ -98,12 +102,9 @@ async function playerAtkSplash() {
 
 async function playerAtkMacrowave() {
 
-    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.4})
-
     subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
     
-
 
     const confused = await playerConfusedCheck() 
         if (confused) {
@@ -139,8 +140,6 @@ async function playerAtkMacrowave() {
 
 async function playerAtkMacrowave_Phase1() {
 
-    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.4})
-
     uiState.setUiVisible = "hidden"
 
 
@@ -166,8 +165,6 @@ async function playerAtkMacrowave_Phase1() {
 
 
 async function playerAtkMacrowaveRelease() {
-
-    var macrowaveReleaseFx = new Howl({ src: 'audio/release.ogg', volume: 1.4})
 
     uiState.setUiVisible = "hidden"
 
@@ -216,8 +213,6 @@ async function playerAtkMacrowaveRelease() {
 
 
 async function cpuAtkTackle() {
-
-    var tackleFx = new Howl({ src: 'audio/tackle.ogg', volume: 0.6})
 
     const confused = await cpuConfusedCheck() 
         if (confused) {
@@ -297,7 +292,7 @@ async function cpuAtkSpam() {
             break
     }
     
-    var spamFx = new Howl({ src: 'audio/you-won.mp3', volume: 0.8})
+    
     spamFx.play()
 
     await timeout(1500)
@@ -312,8 +307,6 @@ async function cpuAtkSpam() {
 }
 
 async function cpuAtkDarkpattern() {
-
-    var darkFx = new Howl({ src: 'audio/dark.ogg', volume: 0.5})
 
     const confused = await cpuConfusedCheck() 
         if (confused) {

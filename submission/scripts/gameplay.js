@@ -1,3 +1,5 @@
+var damageFx = new Howl({ src: 'audio/damage.mp3', volume: 0.6})
+
 class PlayerHp {
     constructor(hp) {
         this._hp = hp;
@@ -5,7 +7,6 @@ class PlayerHp {
         this._numAnim.start()
     }
     set hp(hp) {
-        var damageFx = new Howl({ src: 'audio/damage.mp3', volume: 0.6})
         switch (true) {
             case (hp > 30):
                 var oldHp = this._hp

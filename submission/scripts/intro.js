@@ -1,6 +1,7 @@
 var firstRun = true
 var sfxEncounterStart = new Howl({ src: 'audio/encounter-start.ogg', volume: 0.3 })
 var sfxEncounterTransition = new Howl({ src: 'audio/encounter-transition.ogg', volume: 0.3})
+var buttonCry = new Howl({ src: 'audio/button-cry.mp3'})
 
 function checkIfFirstRun() {
 
@@ -92,7 +93,6 @@ function encounterTransition() {
 // }
 
 function handleClickAfterFisrtRun () {
-    var buttonCry = new Howl({ src: 'audio/button-cry.mp3'})
         buttonCry.play()
 }
 
