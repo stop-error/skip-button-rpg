@@ -142,6 +142,9 @@ const subButtonContainerArray = ["fight-button-container", "magic-button-contain
 
 var menuSelectFx = new Howl({ src: 'audio/menu.ogg', volume: 0.9})
 
+var bgmWin = new Howl({ src: 'audio/win.ogg', loop: true, volume: 0.7})
+var bgmLose = new Howl({ src: 'audio/lose.ogg', loop: true, volume: 1.0})
+
 
 var uiState = new UiState("hidden")
 var playerHp = new PlayerHp(30)
@@ -214,7 +217,6 @@ function cpuTurn() {
 
 async function cpuWin() {
     BgmEncounter.pause()
-    var bgmLose = new Howl({ src: 'audio/lose.ogg', loop: true, volume: 1.0})
     bgmLose.play()
 
     typewriter.clear()
@@ -239,7 +241,6 @@ async function cpuWin() {
 
 async function playerWin() {
     BgmEncounter.pause()
-    var bgmWin = new Howl({ src: 'audio/win.ogg', loop: true, volume: 0.7})
     bgmWin.play()
 
     typewriter.clear()
