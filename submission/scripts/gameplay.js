@@ -213,7 +213,7 @@ function cpuTurn() {
 
 
 async function cpuWin() {
-    BgmEncounter.stop()
+    BgmEncounter.pause()
     var bgmLose = new Howl({ src: 'audio/lose.ogg', loop: true, volume: 1.0})
     bgmLose.play()
 
@@ -238,7 +238,7 @@ async function cpuWin() {
 
 
 async function playerWin() {
-    BgmEncounter.stop()
+    BgmEncounter.pause()
     var bgmWin = new Howl({ src: 'audio/win.ogg', loop: true, volume: 0.7})
     bgmWin.play()
 

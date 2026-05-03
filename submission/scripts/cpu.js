@@ -22,7 +22,7 @@ class CpuState {
                 this._hp = hp;
             }
             
-        console.log("hp is now " + this._hp)
+        //console.log("hp is now " + this._hp)
     
     }
 

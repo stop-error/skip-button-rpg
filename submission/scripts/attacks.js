@@ -98,7 +98,7 @@ async function playerAtkSplash() {
 
 async function playerAtkMacrowave() {
 
-    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.0})
+    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.4})
 
     subMenuSelectFx.play()
     uiState.setUiVisible = "hidden"
@@ -139,7 +139,7 @@ async function playerAtkMacrowave() {
 
 async function playerAtkMacrowave_Phase1() {
 
-    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.0})
+    var macrowaveChargeFx = new Howl({ src: 'audio/charge.ogg', volume: 1.4})
 
     uiState.setUiVisible = "hidden"
 
@@ -167,7 +167,7 @@ async function playerAtkMacrowave_Phase1() {
 
 async function playerAtkMacrowaveRelease() {
 
-    var macrowaveReleaseFx = new Howl({ src: 'audio/release.ogg', volume: 0.8})
+    var macrowaveReleaseFx = new Howl({ src: 'audio/release.ogg', volume: 1.4})
 
     uiState.setUiVisible = "hidden"
 
