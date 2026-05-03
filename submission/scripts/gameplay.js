@@ -214,7 +214,7 @@ function cpuTurn() {
 
 async function cpuWin() {
     BgmEncounter.stop()
-    var bgmLose = new Howl({ src: 'audio/win.ogg', loop: true, volume: 0.7})
+    var bgmLose = new Howl({ src: 'audio/lose.ogg', loop: true, volume: 1.0})
     bgmLose.play()
 
     typewriter.clear()

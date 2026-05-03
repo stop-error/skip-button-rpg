@@ -34,7 +34,6 @@ function bounceButton() {
 function timeout(ms) {
     return new Promise((resolve) => {
         setTimeout(() => {
-            console.log("timeout");
             resolve()
         }, ms);
     })
