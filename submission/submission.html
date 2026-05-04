@@ -166,8 +166,14 @@
         // we call fail to restart. You're welcome to replace this with a survey
         // or other interaction instead (see examples/survey).
         if (event.data.type === 'adFinished') {
-          skipButton.style.display = 'none';
-          window.top.postMessage({ type: 'fail' }, '*');
+          checkIfFirstRun()
+          .then(bounceButton)
+          .then(() => timeout(500))
+          .then(encounterTransition)
+          .then(() => timeout(1000))
+          .then(startGame)
+          .then(() => timeout(3000))
+          .then(playerIdle)
         }
       });
 
