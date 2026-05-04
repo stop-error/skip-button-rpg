@@ -12,7 +12,7 @@ function startGame() {
         BgmEncounter.play()
         animateButtonIdle() 
         var dialogContainer = document.getElementById("dialog-container");
-        dialogContainer.style.display = "inline-block"
+        dialogContainer.style.opacity = 1
         typewriter.start("SKIP BUTTON LvL. 5 wants to BATTLE!");
         resolve()
     })
