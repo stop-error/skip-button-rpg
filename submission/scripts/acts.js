@@ -53,7 +53,10 @@ async function playerActAurafarm() {
     typewriter.start("SKIP BUTTON LvL. 5 is intimidated!")
     cpuState.aurafarmAfflicted = true
     var aurafarmButton = document.getElementById("aurafarm-button")
-    aurafarmButton.style.display = "none"
+    aurafarmButton.onclick = () => {
+        uiError.play()
+    }
+    aurafarmButton.style.color = "#aaa9a9"
 
     await timeout(2500)
 
