@@ -13,7 +13,7 @@ async function playerMagiUpdog() {
     cpuState.updogAfflicted = true
     var updogButton = document.getElementById("updog-button")
     updogButton.removeAttribute("onclick")
-    updogButton.style.color = #aaa9a9
+    updogButton.style.color = "#aaa9a9"
 
     typewriter.clear
     typewriter.start("SKIP BUTTON LvL. 5 is now CONFUSED!")
@@ -69,7 +69,7 @@ async function playerMagiHeal() {
     healFx.play()
     var healButton = document.getElementById("heal-button")
     healButton.removeAttribute("onclick")
-    healButton.style.color = #aaa9a9
+    healButton.style.color = "#aaa9a9"
 
     await timeout(1000)
 
