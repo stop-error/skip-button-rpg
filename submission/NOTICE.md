@@ -30,7 +30,17 @@ Additional samples by Ove Melaa (Omsofware@hotmail.com) -2013 Ove Melaa https://
 
 "8-Bit Victory Loop" by Wolfgang_ https://opengameart.org/content/8-bit-victory-loop licensed under Public Domain https://creativecommons.org/publicdomain/zero/1.0/
 
+
+
+
 "8-Bit Sound Effects Library" by Little Robot Sound Factory www.littlerobotsoundfactory.com https://opengameart.org/content/8-bit-sound-effects-library licensed under Creative Commons Attribution 3.0 Unported: https://creativecommons.org/licenses/by/3.0/
+
+
+
+
+"JRPG Style UI Sounds" by KillaMaaki https://opengameart.org/content/jrpg-style-ui-sounds licensed under Creative Commons Attribution 3.0 Unported: https://creativecommons.org/licenses/by/3.0/
+
+
 
 
 animejs

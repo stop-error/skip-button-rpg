@@ -145,6 +145,7 @@ var menuSelectFx = new Howl({ src: 'audio/menu.ogg', volume: 0.9})
 
 var bgmWin = new Howl({ src: 'audio/win.ogg', loop: true, volume: 0.7})
 var bgmLose = new Howl({ src: 'audio/lose.ogg', loop: true, volume: 1.0})
+var uiError = new Howl({ src: 'audio/error.wav', volume: 1.0})
 
 
 var uiState = new UiState("hidden")
@@ -301,6 +302,7 @@ function openSubMenu(subMenuId, buttonContainerId) {
     buttonContainerElement.style.display = "grid"
 
 }
+
 
 function chicken(functionName) {
         typewriter.clear()

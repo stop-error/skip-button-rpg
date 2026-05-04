@@ -8,6 +8,8 @@ var darkFx = new Howl({ src: 'audio/dark.ogg', volume: 0.5})
 
 async function playerRun() {
 
+    subMenuSelectFx.play()
+
     uiState.setUiVisible = "hidden"
 
     typewriter.clear()
@@ -124,7 +126,7 @@ async function playerAtkMacrowave() {
 
         await animateMacrowaveChargingHide()
 
-        await timeout(400)
+        await timeout(1000)
 
         playerState.macrowaveCharging = 1
 
@@ -157,7 +159,7 @@ async function playerAtkMacrowave_Phase1() {
 
     await animateMacrowaveChargingHide()
 
-    await timeout(400)
+    await timeout(1000)
 
     cpuTurn()
 
@@ -189,7 +191,7 @@ async function playerAtkMacrowaveRelease() {
 
     await animateMacrowaveReleaseHide()
 
-    await timeout(400)
+    await timeout(1000)
 
     .then(animateButtonDamageFlash)
 
