@@ -13,7 +13,7 @@ async function playerMagiUpdog() {
     cpuState.updogAfflicted = true
     var updogButton = document.getElementById("updog-button")
     updogButton.onclick = () => {
-        "uiError.play"
+        uiError.play()
     }
     updogButton.style.color = "#aaa9a9"
 
@@ -71,7 +71,7 @@ async function playerMagiHeal() {
     healFx.play()
     var healButton = document.getElementById("heal-button")
     healButton.onclick = () => {
-        "uiError.play"
+        uiError.play()
     } 
     healButton.style.color = "#aaa9a9"
 
