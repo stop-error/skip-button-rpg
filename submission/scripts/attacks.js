@@ -124,7 +124,7 @@ async function playerAtkMacrowave() {
 
         await animateMacrowaveChargingHide()
 
-        await timeout(2500)
+        await timeout(200)
 
         playerState.macrowaveCharging = 1
 
@@ -157,7 +157,7 @@ async function playerAtkMacrowave_Phase1() {
 
     await animateMacrowaveChargingHide()
 
-    await timeout(2500)
+    await timeout(200)
 
     cpuTurn()
 
@@ -189,7 +189,7 @@ async function playerAtkMacrowaveRelease() {
 
     await animateMacrowaveReleaseHide()
 
-    await timeout(2500)
+    await timeout(200)
 
     .then(animateButtonDamageFlash)
 
