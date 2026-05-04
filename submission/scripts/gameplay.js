@@ -304,8 +304,3 @@ function openSubMenu(subMenuId, buttonContainerId) {
 }
 
 
-function chicken(functionName) {
-        typewriter.clear()
-        typewriter.start(functionName + ": Nothing here but us chickens! (function not implemented)") // Hold off here!
-}
-
