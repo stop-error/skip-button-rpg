@@ -47,6 +47,7 @@ async function playerMagiAdblock() {
     } else {
         console.log("browser passed adblock check (that was not a bug, that was the joke)")
         playerWinAdblock()
+        return
     }
 
     await timeout(2500)

@@ -8,7 +8,6 @@ var BgmEncounter = new Howl({ src: 'audio/battle-start.ogg', loop: true, volume:
 function startGame() {
   
     return new Promise((resolve) => {
-        parent.video.style.opacity = "0"
         BgmEncounter.play()
         animateButtonIdle() 
         var dialogContainer = document.getElementById("dialog-container");

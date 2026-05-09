@@ -234,7 +234,7 @@ async function cpuAtkTackle() {
 
     if (cpuState.aurafarmAfflicted === true) {
         typewriter.clear()
-        typewriter.start("PLAYER took 4 DAMAGE! (SKIP BUTTON LvL. 5 is intimidated)")
+        typewriter.start("PLAYER took 4 DAMAGE! (SKIP BUTTON LvL. 5 is INTIMIDATED)")
         playerHp.hp = playerHp.hp - 4
     } else {
         typewriter.clear()

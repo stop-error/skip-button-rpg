@@ -56,7 +56,7 @@
       <img src="images/spam-contest.jpeg" class="spam" id="spam-contest">
       <img src="images/spam-netflix.png" class="spam" id="spam-netflix">
       <img src="images/spam-youtube.jpeg" class="spam" id="spam-youtube">
-      <img src="images/encounter-backround4.png" class="encounter-backround" id="backround">
+      <img src="images/encounter-backround.png" class="encounter-backround" id="backround">
       
 
       <div class="menu-box hp-menu-box" id="player-hp-menu">
@@ -121,11 +121,13 @@
       Skip Ad...
     </button>
     <img src="images/shades.png" style="pointer-events: none" id="shades">
+    <img src="images/shades.png" style="pointer-events: none" id="adblock-shade">
+    <img src="images/adblock.png" id="adblock-notice">
   </div>
 
  
-  <script src="libraries/howler/howler.min.js"></script>
-  <script src="libraries/anime/anime.umd.min.js"></script>
+  <script src="libraries/howler/howler.js"></script>
+  <script src="libraries/anime/anime.umd.js"></script>
   <script src="libraries/bowser/es5.js"></script>
   <script src="libraries/countUp/countUp.umd.js"></script>
   <script src="libraries/RPGDialogBox/typewriter.js"></script>
@@ -190,12 +192,7 @@
         .then(startGame)
         .then(() => timeout(3000))
         .then(playerIdle)
-        //.catch(handleClickAfterFisrtRun) 
 
-
-
-        //skipButton.style.display = 'none';
-        //adSuccess();
       });
 
     })(window, document);

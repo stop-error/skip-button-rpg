@@ -41,8 +41,6 @@ function timeout(ms) {
 }
 
 function encounterTransition() {
-
-    var video = window.parent.document.getElementById("video")
     
     sfxEncounterTransition.play()
      
@@ -58,14 +56,6 @@ function encounterTransition() {
             scale: 1.5,
         }
     )
-    anime.animate(
-        video,
-        {
-            opacity: 0,
-            duration: 3000,
-        }
-        
-    )
 
     return anime.animate(
         '.encounter-backround',
@@ -77,20 +67,6 @@ function encounterTransition() {
         },
     )
 }
-
-// function fadeVideo() {
-
-//     var video = document.getElementById("parent.video")
-
-//     return anime.animate(
-//         video,
-//         {
-//             opacity: 0,
-//             duration: 1000,
-//         }
-        
-//     )
-// }
 
 function handleClickAfterFisrtRun () {
         buttonCry.play()

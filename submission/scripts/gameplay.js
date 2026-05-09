@@ -260,15 +260,13 @@ async function playerWin() {
 
 
 async function playerWinAdblock() {
-    var wrapper = window.parent.document.getElementById("game-inner-wrapper")
-    wrapper.style.display = "none"
+    var shade = document.getElementById("adblock-shade")
+    shade.style.opacity = 1
     BgmEncounter.pause()
-    // await timeout(2500)
-    // var base = window.location.origin
-    // var img = document.createElement("img");
-    // img.setAttribute("src", "adblocker.png");
-    // window.parent.document.getElementById("inner-wrapper").appendChild(img);
     await timeout(2500)
+    var notice = document.getElementById("adblock-notice")
+    notice.style.display = "block"
+    await timeout(3500)
     window.top.postMessage({ type: 'success' }, '*')
 
 }

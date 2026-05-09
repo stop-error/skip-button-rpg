@@ -1,6 +1,9 @@
 .encounter-backround {
     text-align: center;
     opacity: 0;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 #shades {
@@ -9,7 +12,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    display: none
+    display: none;
 }
 
 #darkpattern-shade {
@@ -18,7 +21,24 @@
     position: absolute;
     top: 0;
     right: 0;
-    display: inline
+    display: block;
+}
+
+#adblock-shade {
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+}
+
+#adblock-notice {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
 
 #dialog-box {

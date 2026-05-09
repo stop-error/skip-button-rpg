@@ -50,7 +50,7 @@ async function playerActAurafarm() {
     await timeout(2500)
 
     typewriter.clear
-    typewriter.start("SKIP BUTTON LvL. 5 is intimidated!")
+    typewriter.start("SKIP BUTTON LvL. 5 is INTIMIDATED!")
     cpuState.aurafarmAfflicted = true
     var aurafarmButton = document.getElementById("aurafarm-button")
     aurafarmButton.onclick = () => {
